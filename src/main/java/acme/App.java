@@ -11,7 +11,6 @@ import javax.jms.Message;
 import javax.jms.Session;
 
 @SpringBootApplication
-@EnableJms // triggers the discovery of methods annotated with @JmsListener, creating the message listener container under the covers.
 public class App {
 
 	private static final Logger logger = LoggerFactory.getLogger(App.class);

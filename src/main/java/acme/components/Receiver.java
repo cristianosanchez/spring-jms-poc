@@ -2,8 +2,6 @@ package acme.components;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
@@ -11,8 +9,10 @@ import org.springframework.stereotype.Component;
 public class Receiver {
 
 	private static final Logger logger = LoggerFactory.getLogger(Receiver.class);
+
+	private final String DESTINATION_NAME = "DemoQueue";
 	
-	 @JmsListener(destination="DemoQueue" /*, containerFactory = "myJmsContainerFactory"*/)
+	 @JmsListener(destination=DESTINATION_NAME /*, containerFactory = "myJmsContainerFactory"*/)
 	 public void receiveMessage(String message) {
 	 	logger.info(String.format("\n\tReceived message [%s]", message));
 	 }
