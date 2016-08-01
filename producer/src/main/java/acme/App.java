@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.jms.annotation.EnableJms;
 
 import javax.jms.JMSException;
@@ -11,7 +12,7 @@ import javax.jms.Message;
 import javax.jms.Session;
 
 @SpringBootApplication
-public class App {
+public class App extends SpringBootServletInitializer {
 
 	private static final Logger logger = LoggerFactory.getLogger(App.class);
 

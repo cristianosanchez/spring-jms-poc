@@ -18,12 +18,11 @@ import javax.ws.rs.core.MediaType;
 
 @Component
 @Path("/message")
-@Produces(MediaType.APPLICATION_JSON)
 public class HelloResource {
 
     private static final Logger logger = LoggerFactory.getLogger(HelloResource.class);
 
-	private final String DESTINATION_NAME = "DemoQueue";
+	private final String DESTINATION_NAME = "java:/jms/queue/DemoQueue";
 
     @Autowired
     private JmsTemplate jmsTemplate;
